@@ -32,18 +32,6 @@ while True:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             terminate()
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_UP:
-                if z == 19:
-                    print('Некорректное значение для масштаба')
-                else:
-                    z += 1
-            elif event.key == pygame.K_DOWN:
-                if z == 0:
-                    print('Некорректное значение для масштаба')
-                else:
-                    z -= 1
-            map_file = get_image(lon, lat, z)
     image = pygame.image.load(map_file)
     screen.blit(image, (0, 0))
     pygame.display.flip()
